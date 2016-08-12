@@ -1,14 +1,14 @@
-def decode(encryption):
-    decodedMess = []
+def decode(encodedMessage):
+    message = []
     lencount = []
 
-    for i in encryption:
+    for i in encodedMessage:
         lencount.append(i)
         if i.isdecimal():
-            decodedMess.append(encryption[len(lencount) + int(i) ])
+            message.append(encodedMessage[len(lencount) + int(i) ])
 
-    return ''.join(decodedMess)
+    return ''.join(message)
 
-encryptedMess = input('Input the message that needs decoding:')
+userMessage = input('Input the message that needs decoding:')
 
-print(decode(encryptedMess))
+print(decode(userMessage))
