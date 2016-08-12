@@ -1,13 +1,13 @@
 def decode(encodedMessage):
-    message = []
-    lencount = []
+    message = ''
+    lencount = 0
 
     for i in encodedMessage:
-        lencount.append(i)
+        lencount += 1
         if i.isdecimal():
-            message.append(encodedMessage[len(lencount) + int(i) ])
+            message += encodedMessage[(lencount + int(i))]
 
-    return ''.join(message)
+    return message
 
 userMessage = input('Input the message that needs decoding:')
 
